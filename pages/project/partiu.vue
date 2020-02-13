@@ -224,6 +224,18 @@ blockquote {
 	}
 	.container-fluid > section:nth-of-type(2n) .columns {
 		margin-top: 30px;
+		> .column:last-of-type {
+			margin-top: -150px;
+		}
+	}
+	.container-fluid > section:nth-of-type(3n) .columns {
+		display: flex;
+		flex-direction: column;
+		margin-top: 30px;
+		> .column:last-of-type {
+			order: -1;
+			margin-bottom: -60px;
+		}
 	}
 }
 </style>
