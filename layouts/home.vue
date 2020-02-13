@@ -8,7 +8,7 @@
 					<a href="#">
 						<img src="../assets/footer/behance.svg">
 					</a>
-					<a href="#">
+					<a href="https://medium.com/clarific">
 						<img src="../assets/footer/medium.svg">
 					</a>
 					<a href="#">
