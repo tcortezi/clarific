@@ -183,4 +183,47 @@ blockquote {
 	color: rgba(0, 0, 0, 0.55);
 	margin-top: -28px;
 }
+@media screen and (max-width: 769px) {
+	.hero {
+		flex-direction: column;
+		align-items: unset;
+		margin-top: 30px;
+		padding: calc(6.25vw + 12px);
+		.title { max-width: 230px; }
+		> div:last-of-type {
+			margin-top: 30px;
+			max-width: unset;
+			text-align: unset;
+			align-items: unset;
+		}
+	}
+	.container-fluid {
+		.projectImg {
+			// transform: translateY(-190px);
+		}
+		.section.is-paddingless {
+			padding: 3rem 1.5rem !important;
+		}
+	}
+	.container-fluid > section:nth-of-type(2n) .columns {
+		margin-top: -120px;
+		> .column:last-of-type {
+			margin-top: -60px;
+		}
+	}
+	.container-fluid > section:nth-of-type(3n) .columns {
+		display: flex;
+		flex-direction: column;
+		margin-top: 30px;
+		> .column:last-of-type {
+			order: -1;
+			margin-bottom: -60px;
+		}
+	}
+	.container-fluid > section:last-of-type .columns {
+		> .column:last-of-type {
+			margin-top: -60px;
+		}
+	}
+}
 </style>
