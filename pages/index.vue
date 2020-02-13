@@ -1,9 +1,10 @@
 <template>
   <section class="section">
     <div class="container">
+      <img src="../assets/logo.svg" class="is-hidden-desktop">
       <div class="columns">
         <div class="column">
-          <img src="../assets/logo.svg">
+          <img src="../assets/logo.svg" class="is-hidden-mobile">
           <p class="lat">
             [Do lat. <em>clarificare</em>.]
           </p>
@@ -16,7 +17,7 @@
           <div class="menu">
             <nuxt-link to="/projects">Works</nuxt-link>
             <a>Serviços</a>
-            <a>Sobre</a>
+            <nuxt-link to="/about">Sobre</nuxt-link>
             <a>Contato</a>
           </div>
         </div>
@@ -127,5 +128,73 @@ section {
   0% { transform: translateY(0) }
   50% { transform: translateY(-3px) }
   100% { transform: translateY(0) }
+}
+
+@media screen and (max-width: 769px) {
+  section {
+    margin-top: unset;
+    img.is-hidden-desktop { height: 60px; }
+    .columns {
+      display: flex;
+      flex-direction: column;
+    }
+    .column:first-of-type {
+      margin-top: -20px;
+      p.lat { font-size: 20px; margin-top: unset; }
+      p.dic {
+        font-size: 16px;
+        margin-top: 12px;
+        > .highlight {
+          margin-top: 8px;
+          &::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 345px;
+            height: 31px;
+            background-image: url('../assets/home/highlight-mob-1.svg');
+            background-size: 345px 31px;
+            z-index: -1;
+            margin-left: -10px;
+          }
+          &::after {
+            width: 148px;
+            height: 26px;
+            top: unset;
+            bottom: -2px;
+            left: -40px;
+            background-image: url('../assets/home/highlight-mob-2.svg');
+            background-size: 148px 26px;
+          }
+        }
+      }
+      div.menu { 
+        margin-top: 60px;
+        font-size: 16px;
+        display: flex;
+        justify-content: space-between;
+        a:not(:last-of-type) { margin-right: unset; }
+      }
+    }
+    .column.app {
+      order: -1;
+      margin-top: 60px;
+      &::before {
+        top: 108px;
+        left: 87px;
+        width: 206px;
+        height: 130px;
+        background-size: cover;
+      }
+      &::after {
+        top: 10px;
+        left: 125px;
+        width: 210px;
+        height: 155px;
+        background-size: cover;
+      }
+    }
+  }
 }
 </style>
