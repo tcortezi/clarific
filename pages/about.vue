@@ -7,7 +7,7 @@
 						Sobre
 					</p>
 					<h1 class="title">
-						Quem Somos Nós
+						A Clarific
 					</h1>
 				</div>
 			</div>
@@ -24,52 +24,48 @@
 						</div>
 						<div class="column">
 							<p class="subtitle">
-								Sobre
+								Background
 							</p>
 							<p class="title">
-								O Estúdio
+								Nossa História
 							</p>
 							<p class="text">
 								A Clarific é resultado da união de profissionais apaixonados e entusiasmados com os desafios que a construção de produtos digitais proporciona. Os sócios vêm de <em>startups</em>, centenas de projetos realizados em trabalhos anteriores e muita disposição para encarar novos desafios mantendo um ambiente leve, criativo e autêntico.
 							</p>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="section">
-				<div class="container">
-					<div class="columns is-multiline">
-						<div class="column is-full">
-							<p class="subtitle">
-								Time
-							</p>
-							<p class="title">
-								A Liderança
-							</p>
-						</div>
-						<div class="column is-narrow">
-							<div class="teamCard">
-								<figure class="image is-128x128">
-								  <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-								</figure>
-								<div>
-									<p class="title">
-										Tiago Villardi Cortezi
+							<div class="columns is-multiline mt">
+								<div class="column is-full">
+									<p class="subtitle">
+										Pessoas
 									</p>
-									<b-tag type="is-dark">Product Design & Frontend</b-tag>
+									<p class="title">
+										Os Líderes
+									</p>
 								</div>
-							</div>
-						</div>
-						<div class="column is-narrow">
-							<div class="teamCard">
-								<figure class="image is-128x128">
-								  <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
-								</figure>
-								<div>
-									<p class="title">
-										Rodrigo Villardi Cortezi
-									</p>
-									<b-tag type="is-dark">Backend Fullstack</b-tag>
+								<div class="column is-narrow">
+									<div class="teamCard">
+										<figure class="image is-128x128">
+										  <img class="is-rounded" src="~/assets/about/tiago.jpg">
+										</figure>
+										<div>
+											<p class="title">
+												Tiago Villardi Cortezi
+											</p>
+											<b-tag type="is-dark">Product Design & Frontend</b-tag>
+										</div>
+									</div>
+								</div>
+								<div class="column is-narrow">
+									<div class="teamCard">
+										<figure class="image is-128x128">
+										  <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+										</figure>
+										<div>
+											<p class="title">
+												Rodrigo Villardi Cortezi
+											</p>
+											<b-tag type="is-dark">Backend Fullstack</b-tag>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -110,7 +106,7 @@
 	> section { padding-top: 0; }
 	.column > video {
 		transform: translateY(-120px);
-		border-radius: 50%;
+		// border-radius: 50%;
 	}
 	.subtitle {
 		display: inline-block;
@@ -137,5 +133,6 @@
 		flex-direction: column;
 		> figure { flex-shrink: 0; margin-bottom: 20px; }
 	}
+	.mt { margin-top: 90px; }
 }
 </style>
