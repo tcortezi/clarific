@@ -57,13 +57,13 @@
 								<div class="column is-narrow">
 									<div class="teamCard">
 										<figure class="image is-128x128">
-										  <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+										  <img class="is-rounded" src="~/assets/about/rodrigo.png">
 										</figure>
 										<div>
 											<p class="title">
 												Rodrigo Villardi Cortezi
 											</p>
-											<b-tag type="is-dark">Backend Fullstack</b-tag>
+											<b-tag type="is-dark">Product Owner & Backend</b-tag>
 										</div>
 									</div>
 								</div>
@@ -134,5 +134,17 @@
 		> figure { flex-shrink: 0; margin-bottom: 20px; }
 	}
 	.mt { margin-top: 90px; }
+}
+@media screen and (max-width: 769px) {
+	.hero {
+		margin-top: 30px;
+	}
+	.container-fluid {
+		.container > .columns:first-of-type {
+			> .column:nth-of-type(2n) {
+				margin-top: -120px;
+			}
+		}
+	}
 }
 </style>
