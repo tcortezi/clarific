@@ -4,7 +4,7 @@
 			<div class="container">
 				<div class="hero">
 					<p class="subtitle">
-						Works
+						Cases
 					</p>
 					<h1 class="title">
 						Projetos em destaque

@@ -106,7 +106,7 @@
 	> section { padding-top: 0; }
 	.column > video {
 		transform: translateY(-120px);
-		// border-radius: 50%;
+		border-radius: 20px;
 	}
 	.subtitle {
 		display: inline-block;

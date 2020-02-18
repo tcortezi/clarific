@@ -5,13 +5,13 @@
 		<footer>
 			<div class="container">
 				<div>
-					<a href="#">
+					<a href="#" class="is-hidden">
 						<img src="../assets/footer/behance.svg">
 					</a>
 					<a href="https://medium.com/clarific">
 						<img src="../assets/footer/medium.svg">
 					</a>
-					<a href="#">
+					<a href="https://www.instagram.com/clarificlab/">
 						<img src="../assets/footer/instagram.svg">
 					</a>
 				</div>

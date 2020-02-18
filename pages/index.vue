@@ -15,8 +15,8 @@
             </span>
           </p>
           <div class="menu">
-            <nuxt-link to="/projects">Works</nuxt-link>
-            <a>Serviços</a>
+            <nuxt-link to="/projects">Cases</nuxt-link>
+            <nuxt-link to="/services">Serviços</nuxt-link>
             <nuxt-link to="/about">Sobre</nuxt-link>
             <a>Contato</a>
           </div>
