@@ -46,6 +46,7 @@ export default {
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-5SKDTQ5' }]
   ],
   /*
   ** Axios module configuration
