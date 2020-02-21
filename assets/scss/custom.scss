@@ -42,3 +42,9 @@ body {
     margin-bottom: 36px;
     overflow-x: hidden;
 }
+
+em.tooltip {
+    border-bottom: 1px dashed $link;
+}
+
+p { cursor: default; }
