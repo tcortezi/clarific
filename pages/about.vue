@@ -137,7 +137,7 @@
 }
 @media screen and (max-width: 769px) {
 	.hero {
-		margin-top: 30px;
+		margin-top: 60px;
 	}
 	.container-fluid {
 		.container > .columns:first-of-type {

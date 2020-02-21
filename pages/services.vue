@@ -739,7 +739,6 @@
 		}
 		> .columns {
 			margin-top: 30px;
-			.column > ul { margin-top: -24px; }
 			ul > li {
 				padding: 12px;
 				display: flex;
@@ -747,6 +746,7 @@
 				> img { margin-right: 12px; }
 			}
 			ul.tools {
+				margin-top: -24px;
 				display: flex;
 				flex-wrap: wrap;
 				> li {
@@ -797,6 +797,53 @@
 		> div { flex: 1 1 0; }
 		.strategy { border-top-left-radius: 20px; }
 		.continue { border-top-right-radius: 20px; }
+	}
+}
+
+@media screen and (max-width: 769px) {
+	.hero {
+		margin-top: 60px;
+	}
+	.container-fluid .container {
+		.services {
+			> div {
+				flex: none;
+				width: 50%;
+				filter: unset;
+			}
+		}
+	}
+	.serviceCard {
+		flex-direction: column;
+		width: unset;
+		&:not(:last-of-type) { margin-bottom: 90px; }
+		> .description {
+			border-top-right-radius: unset;
+			border-bottom-left-radius: 20px;
+			padding: 20px;
+			.column:not(:first-of-type) {
+				padding-top: unset;
+				margin-top: -32px;
+			}
+			.subtitle { font-size: 16px; }
+			.title { font-size: 24px; line-height: 34px; }
+			.text { font-size: 16px; line-height: 24px; }
+			> .columns {
+				ul.tools {
+					margin-top: 32px;
+					> li {
+						width: 33.33%;
+					}
+				}
+			}
+		}
+		> .iconBlock {
+			border-bottom-left-radius: unset;
+			border-top-right-radius: 20px;
+			height: 218px;
+			justify-content: center;
+			> div { margin-top: -32px; }
+		}
 	}
 }
 </style>

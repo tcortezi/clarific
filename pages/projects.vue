@@ -85,9 +85,8 @@ export default {
 	@media screen and (max-width: 769px) {
 		.hero {
 			margin-top: 30px;
-			align-items: unset;
 			padding: calc(6.25vw + 12px);
-			.title { text-align: unset; }
+			.title { text-align: center; }
 			.subtitle { font-size: 18px; }
 		}
 		.container-fluid {
