@@ -27,7 +27,7 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button contato" @click.native="menuMobile">
+              <a class="button contato">
                 Contato
               </a>
             </div>
@@ -35,11 +35,13 @@
         </div>
       </div>
     </nav>
+
     <nuxt />
+
     <footer>
       <div class="container">
         <div>
-          <a href="#" class="is-hidden">
+          <a href="#">
             <img src="../assets/footer/behance.svg">
           </a>
           <a href="https://medium.com/clarific">
@@ -79,13 +81,18 @@
     methods: {
       menuMobile() {
         const el = this.$el.querySelector('.navbar')
+        const body = document.getElementsByTagName('body')[0]
         if(el.classList.contains("active")) {
           el.classList.add("out")
           this.anim.playSegments([28, 0], true)
-          setTimeout(() => { el.className = "navbar" }, 1000)
+          setTimeout(() => {
+            el.className = "navbar"
+            body.style.cssText = ""
+          }, 1000)
         } else {
           el.classList.add("active")
           this.anim.playSegments([0, 28], true)
+          setTimeout(() => { body.style.cssText = "position: fixed;" }, 1000)
         }
       },
       generateNoise() {
@@ -128,7 +135,6 @@
 </script>
 
 <style lang="scss" scoped>
-  // div { position: relative; height: 100%; }
   nav {
     padding-top: 6.48vh;
     padding-left: 6.25vw;
@@ -218,15 +224,15 @@
 
     60% {
       opacity: 1;
-      transform: translate3d(-25px, 0, 0);
+      transform: translate3d(-10px, 0, 0);
     }
 
     75% {
-      transform: translate3d(10px, 0, 0);
+      transform: translate3d(8px, 0, 0);
     }
 
     90% {
-      transform: translate3d(-5px, 0, 0);
+      transform: translate3d(-2px, 0, 0);
     }
 
     to {
@@ -245,11 +251,8 @@
     }
   }
 
-  .bounceOutRight {
-    animation-name: bounceOutRight;
-  }
-
   @media screen and (max-width: 769px) {
+    footer > div.container { padding: 0 30px; }
     nav {
       &.active {
         .navbar-brand > .navbar-item > img {
