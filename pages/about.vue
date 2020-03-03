@@ -17,9 +17,9 @@
 				<div class="container">
 					<div class="columns">
 						<div class="column is-narrow">
-							<video width="450" autoplay loop muted playsinline="true" preload="auto">
+							<video width="450" autoplay loop muted playsinline>
+									<source src="~/assets/about/logoAnima.mp4" type="video/mp4">
 									<source src="~/assets/about/logoAnima.webm" type="video/webm">
-								  <source src="~/assets/about/logoAnima.mp4" type="video/mp4">
 							  Oops! Seu browser não suporta video em HTML5.
 							</video>
 						</div>
