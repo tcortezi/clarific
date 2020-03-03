@@ -81,18 +81,19 @@
     methods: {
       menuMobile() {
         const el = this.$el.querySelector('.navbar')
-        const body = document.getElementsByTagName('body')[0]
-        if(el.classList.contains("active")) {
-          el.classList.add("out")
-          this.anim.playSegments([28, 0], true)
-          setTimeout(() => {
-            el.className = "navbar"
-            body.style.cssText = ""
-          }, 1000)
-        } else {
-          el.classList.add("active")
-          this.anim.playSegments([0, 28], true)
-          setTimeout(() => { body.style.cssText = "position: fixed;" }, 1000)
+        const clip = document.getElementsByTagName('html')[0]
+        const mobile = window.matchMedia("(max-width: 769px)")
+        if(mobile.matches) {
+          if(el.classList.contains("active")) {
+            el.classList.add("out")
+            this.anim.playSegments([28, 0], true)
+            clip.style.cssText = ""
+            setTimeout(() => { el.className = "navbar" }, 1000)
+          } else {
+            el.classList.add("active")
+            this.anim.playSegments([0, 28], true)
+            setTimeout(() => { clip.style.cssText = "overflow: hidden;" }, 1000)
+          }
         }
       },
       generateNoise() {
