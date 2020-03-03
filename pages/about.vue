@@ -18,7 +18,8 @@
 					<div class="columns">
 						<div class="column is-narrow">
 							<video width="450" autoplay loop muted>
-							  <source src="~/assets/about/logoAnima.mp4" type="video/mp4">
+									<source src="~/assets/about/logoAnima.webm" type="video/webm">
+								  <source src="~/assets/about/logoAnima.mp4" type="video/mp4">
 							  Oops! Seu browser não suporta video em HTML5.
 							</video>
 						</div>
@@ -38,7 +39,7 @@
 										Pessoas
 									</p>
 									<p class="title">
-										Os Líderes
+										Liderança
 									</p>
 								</div>
 								<div class="column is-narrow">
@@ -47,7 +48,7 @@
 										  <img class="is-rounded" src="~/assets/about/tiago.jpg">
 										</figure>
 										<div>
-											<p class="title">
+											<p class="title is-size-5">
 												Tiago Villardi Cortezi
 											</p>
 											<b-tag type="is-dark">Product Design & Frontend</b-tag>
@@ -60,7 +61,7 @@
 										  <img class="is-rounded" src="~/assets/about/rodrigo.png">
 										</figure>
 										<div>
-											<p class="title">
+											<p class="title is-size-5">
 												Rodrigo Villardi Cortezi
 											</p>
 											<b-tag type="is-dark">Product Owner & Backend</b-tag>
@@ -133,7 +134,7 @@
 		flex-direction: column;
 		> figure { flex-shrink: 0; margin-bottom: 20px; }
 	}
-	.mt { margin-top: 90px; }
+	.mt { margin-top: 30px; }
 }
 @media screen and (max-width: 769px) {
 	.hero {

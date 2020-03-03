@@ -53,6 +53,7 @@
 					<div class="columns">
 						<div class="column">
 							<video autoplay loop muted>
+								<source src="~/assets/project/mtor/mtor.webm" type="video/webm">
 							  <source src="~/assets/project/mtor/mtor.mp4" type="video/mp4">
 							  Oops! Seu browser não suporta video em HTML5.
 							</video>
