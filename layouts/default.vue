@@ -7,29 +7,27 @@
           <img src="~/assets/logo.svg">
         </nuxt-link>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
+        <a role="button" class="navbar-burger burger" @click="menuMobile">
+          <lottie :options="menuOptions" :height="52" :width="52" v-on:animCreated="handleAnimation" :noMouse="true" />
         </a>
       </div>
 
-      <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-menu">
         <div class="navbar-start">
           <div class="navbar-item">
-            <nuxt-link to="/projects">Cases</nuxt-link>
+            <nuxt-link to="/projects" @click.native="menuMobile">Cases</nuxt-link>
           </div>
           <div class="navbar-item">
-            <nuxt-link to="/services">Serviços</nuxt-link>
+            <nuxt-link to="/services" @click.native="menuMobile">Serviços</nuxt-link>
           </div>
           <div class="navbar-item">
-            <nuxt-link to="/about">Sobre</nuxt-link>
+            <nuxt-link to="/about" @click.native="menuMobile">Sobre</nuxt-link>
           </div>
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button contato">
+              <a class="button contato" @click.native="menuMobile">
                 Contato
               </a>
             </div>
@@ -62,50 +60,81 @@
 </template>
 
 <script>
-export default{
-  methods: {
-    generateNoise() {
-      this.noise = document.createElement('canvas')
-      this.noise.height = window.innerHeight * 2
-      this.noise.width  = window.innerWidth * 2
-      let noiseContext = this.noise.getContext('2d')
-      let noiseData = noiseContext.createImageData(
-      this.noise.width,
-      this.noise.height
-    )
-    let buffer32 = new Uint32Array(noiseData.data.buffer)
-    let len = buffer32.length - 1
-    while (len--) {
-    buffer32[len] = Math.random() < 0.5 ? 0 : -1 >> 0
-    }
-    noiseContext.putImageData(noiseData, 0, 0)
+  import Lottie from '~/components/Lottie.vue'
+
+  export default {
+    components: {
+      Lottie
     },
-    moveNoise() {
-      let canvas  = this.$refs.canvas
-      let context = canvas.getContext('2d')
-      let x = Math.random() * canvas.width
-      let y = Math.random() * canvas.height
-      context.clearRect(0, 0, canvas.width, canvas.height)
-      context.drawImage(this.noise, -x, -y)
+    data() {
+      return {
+        menuOptions: {
+          animationData: require(`~/assets/menu.json`),
+          loop: false,
+          autoplay: false,
+          prerender: true
+        }
+      }
+    },
+    methods: {
+      menuMobile() {
+        const el = this.$el.querySelector('.navbar')
+        if(el.classList.contains("active")) {
+          el.classList.add("out")
+          this.anim.playSegments([28, 0], true)
+          setTimeout(() => { el.className = "navbar" }, 1000)
+        } else {
+          el.classList.add("active")
+          this.anim.playSegments([0, 28], true)
+        }
+      },
+      generateNoise() {
+        this.noise = document.createElement('canvas')
+        this.noise.height = window.innerHeight * 2
+        this.noise.width  = window.innerWidth * 2
+        let noiseContext = this.noise.getContext('2d')
+        let noiseData = noiseContext.createImageData(
+        this.noise.width,
+        this.noise.height
+      )
+      let buffer32 = new Uint32Array(noiseData.data.buffer)
+      let len = buffer32.length - 1
+      while (len--) {
+      buffer32[len] = Math.random() < 0.5 ? 0 : -1 >> 0
+      }
+      noiseContext.putImageData(noiseData, 0, 0)
+      },
+      moveNoise() {
+        let canvas  = this.$refs.canvas
+        let context = canvas.getContext('2d')
+        let x = Math.random() * canvas.width
+        let y = Math.random() * canvas.height
+        context.clearRect(0, 0, canvas.width, canvas.height)
+        context.drawImage(this.noise, -x, -y)
+        requestAnimationFrame(this.moveNoise)
+      },
+      handleAnimation: function (anim) {
+        this.anim = anim
+        this.anim.goToAndStop(0, true)
+      }
+    },
+    mounted() {
+      this.$refs.canvas.height = window.innerHeight
+      this.$refs.canvas.width  = window.innerWidth
+      this.generateNoise()
       requestAnimationFrame(this.moveNoise)
     }
-  },
-  mounted() {
-    this.$refs.canvas.height = window.innerHeight
-    this.$refs.canvas.width  = window.innerWidth
-    this.generateNoise()
-    requestAnimationFrame(this.moveNoise)
   }
-}
 </script>
 
 <style lang="scss" scoped>
   // div { position: relative; height: 100%; }
   nav {
     padding-top: 6.48vh;
-    margin-left: 6.25vw;
-    margin-right: 6.25vw;
+    padding-left: 6.25vw;
+    padding-right: 6.25vw;
     background: unset;
+    .navbar-burger:hover { background-color: unset; }
     .navbar-start { margin-left: 10px; }
     .navbar-item img { max-height: 2.5rem; }
     .navbar-item a:not(.button) {
@@ -152,6 +181,127 @@ export default{
         display: flex;
         justify-content: space-between;
         width: 100px;
+      }
+    }
+  }
+  @keyframes logoBlack {
+    from {
+      filter: invert(0%);
+    }
+
+    to {
+      filter: invert(68%);
+    }
+  }
+  @keyframes logoWhite {
+    from {
+      filter: invert(68%);
+    }
+
+    to {
+      filter: invert(0%);
+    }
+  }
+  @keyframes bounceInRight {
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    from {
+      opacity: 0;
+      transform: translate3d(3000px, 0, 0);
+    }
+
+    60% {
+      opacity: 1;
+      transform: translate3d(-25px, 0, 0);
+    }
+
+    75% {
+      transform: translate3d(10px, 0, 0);
+    }
+
+    90% {
+      transform: translate3d(-5px, 0, 0);
+    }
+
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  @keyframes bounceOutRight {
+    20% {
+      opacity: 1;
+      transform: translate3d(-20px, 0, 0);
+    }
+
+    to {
+      opacity: 0;
+      transform: translate3d(2000px, 0, 0);
+    }
+  }
+
+  .bounceOutRight {
+    animation-name: bounceOutRight;
+  }
+
+  @media screen and (max-width: 769px) {
+    nav {
+      &.active {
+        .navbar-brand > .navbar-item > img {
+          animation-name: logoBlack;
+          animation-duration: 1s;
+          animation-fill-mode: both; 
+        }
+        .navbar-burger > div > svg {
+          position: relative; z-index: 60;
+        }
+        .navbar-brand { z-index: 30; position: relative; }
+        .navbar-menu {
+          animation-name: bounceInRight;
+          animation-duration: 1s;
+          animation-fill-mode: both;
+          display: block;
+          box-shadow: unset;
+          position: absolute;
+          height: 100vh;
+          width: 100vw;
+          background-color: white;
+          top: 0;
+          left: 0;
+        }
+        &.out {
+          .navbar-menu {
+            animation-name: bounceOutRight;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+          }
+          .navbar-brand > .navbar-item > img {
+            animation-name: logoWhite;
+            animation-duration: 1s;
+            animation-fill-mode: both; 
+          }
+        }
+        .navbar-start { margin-left: unset; margin-top: 160px; }
+        .navbar-menu .navbar-item {
+          padding: 1rem 0.75rem;
+          text-align: center;
+          .buttons { display: block; text-align: center; }
+          a {
+            color: rgba(25, 26, 30, 0.9);
+            font-size: 2.5rem;
+            font-weight: 800;
+            &.nuxt-link-active {
+              color: #8E54E9;
+              border-bottom: 0.25rem solid #8E54E9;
+            }
+            &.button { background: unset; padding: unset; margin-top: -1rem; }
+          }
+        }
       }
     }
   }
