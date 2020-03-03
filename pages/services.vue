@@ -16,35 +16,35 @@
 			<section class="section">
 				<div class="container">
 					<div class="services">
-						<div class="strategy">
+						<div class="strategy" @click="scrollTo('strategy')">
 							<lottie :options="strategyOptions" :height="140" :width="160" v-on:animCreated="handleAnimation" />
 							<p class="title">Consultoria Estratégica</p>
 						</div>
-						<div class="ux">
+						<div class="ux" @click="scrollTo('ux')">
 							<lottie :options="uxOptions" :height="140" :width="60" v-on:animCreated="handleAnimation" />
 							<p class="title">User Experience</p>
 						</div>
-						<div class="cloud">
+						<div class="cloud" @click="scrollTo('cloud')">
 							<lottie :options="cloudOptions" :height="140" :width="140" v-on:animCreated="handleAnimation" />
 							<p class="title">Arquitetura Cloud</p>
 						</div>
-						<div class="project">
+						<div class="project" @click="scrollTo('project')">
 							<lottie :options="projectOptions" :height="140" :width="120" v-on:animCreated="handleAnimation" />
 							<p class="title">Gestão de Projetos</p>
 						</div>
-						<div class="dev">
+						<div class="dev" @click="scrollTo('dev')">
 							<lottie :options="devOptions" :height="140" :width="160" v-on:animCreated="handleAnimation" />
 							<p class="title">Desenvolvimento Web</p>
 						</div>
-						<div class="mobile">
+						<div class="mobile" @click="scrollTo('mobile')">
 							<lottie :options="mobileOptions" :height="140" :width="120" v-on:animCreated="handleAnimation" />
 							<p class="title">Desenvolvimento Mobile</p>
 						</div>
-						<div class="quality">
+						<div class="quality" @click="scrollTo('quality')">
 							<lottie :options="qualityOptions" :height="140" :width="120" v-on:animCreated="handleAnimation" />
 							<p class="title">Garantia de Qualidade</p>
 						</div>
-						<div class="continue">
+						<div class="continue" @click="scrollTo('continue')">
 							<lottie :options="continueOptions" :height="140" :width="120" v-on:animCreated="handleAnimation" />
 							<p class="title">Serviços Contínuos</p>
 						</div>
@@ -289,7 +289,7 @@
 								Escopo, Cronograma & Tracking
 							</p>
 							<p class="text">
-								A organização e gestão do projeto é fator de sucesso para um desenvolvimento ágil e eficiente. Por meios de métodos comprovados e processos bem definidos, conseguimos manter o ritimo necessário para o projeto continuar a ganhar corpo ao mesmo tempo em que problemas são solucionados sem desviar do objetivo traçado.
+								A organização e gestão do projeto são fatores de sucesso para um desenvolvimento ágil e eficiente. Por meios de métodos comprovados e processos bem definidos, conseguimos manter o ritmo necessário para o projeto continuar a ganhar corpo ao mesmo tempo em que problemas são solucionados sem desviar do objetivo traçado.
 							</p>
 							<div class="columns">
 								<div class="column">
@@ -487,7 +487,7 @@
 								Realidade & Oportunidade
 							</p>
 							<p class="text">
-								Os acessos a partir de celulares já deixaram os desktops para trás, comendo poeira, há algum tempo. Nossa equipe está preparada para esta realidade e pronta para contruir soluções <em>cross platforms</em> ou puramente nativas.
+								Os acessos a partir de celulares já deixaram os desktops para trás, comendo poeira, há algum tempo. Nossa equipe está preparada para esta realidade e pronta para construir soluções <em>cross platforms</em> ou puramente nativas.
 							</p>
 							<div class="columns is-multiline">
 								<div class="column is-full" style="padding-top: unset; padding-bottom: unset;">
@@ -635,6 +635,10 @@
       handleAnimation: function (anim) {
         this.anim = anim
         this.anim.goToAndStop(89, true)
+      },
+      scrollTo: function (element) {
+      	const el = this.$el.querySelector('.iconBlock.'+element)
+      	el.scrollIntoView({behavior: "smooth"})
       }
 	  }
 	}
