@@ -814,7 +814,16 @@
 				flex: none;
 				width: 50%;
 				filter: unset;
+				&:hover { transform: translateY(0px); p { color: unset; } }
 			}
+		.strategy:hover { background-color: unset; }
+		.ux:hover { background-color: unset; }
+		.cloud:hover { background-color: unset; }
+		.project:hover { background-color: unset; }
+		.dev:hover { background-color: unset; }
+		.mobile:hover { background-color: unset; }
+		.quality:hover { background-color: unset; }
+		.continue:hover { background-color: unset; }
 		}
 	}
 	.serviceCard {
