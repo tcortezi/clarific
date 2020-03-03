@@ -5,7 +5,7 @@
 		<footer>
 			<div class="container">
 				<div>
-					<a href="#" class="is-hidden">
+					<a href="#">
 						<img src="../assets/footer/behance.svg">
 					</a>
 					<a href="https://medium.com/clarific">
@@ -93,4 +93,7 @@ export default{
 			}
 		}
 	}
+  @media screen and (max-width: 769px) {
+    footer > div.container { padding: 0 30px; }
+  }
 </style>
