@@ -10,7 +10,6 @@ const app = express()
 app.use(express.json())
 
 app.post('/', (req, res) => {
-	// Validate, sanitize and send
 	const attributes = [
 		'name',
 		'email',

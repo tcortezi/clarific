@@ -24,7 +24,7 @@
 			<b-input v-model="msg" type="textarea" placeholder="Comentários"></b-input>
 			<b-field>
 				<p class="control">
-					<button type="submit" class="button">
+					<button type="submit" class="button" :class="{ 'is-loading': loading }">
 						Enviar
 					</button>
 				</p>
@@ -38,6 +38,7 @@ const url = '/api/contact'
 export default {
 	data() {
 		return {
+			loading: false,
 			name: null,
 			email: null,
 			contactPreference: null,
@@ -50,7 +51,7 @@ export default {
 	},
 	methods: {
 		submitForm() {
-			console.log('submitForm')
+			this.loading = true
 			this.$axios.$post(url, {
 				name: this.name,
 				email: this.email,
@@ -59,9 +60,19 @@ export default {
 				contactPreference: this.contactPreference,
 				msg: this.msg
 			}).then((response) => {
-				console.log('success')
+				this.loading = false
+				this.$buefy.toast.open({
+					message: 'Recebemos sua mensagem! 😍',
+					type: 'is-success',
+					duration: 4000
+				})
 			}).catch((error) => {
-				console.log('error')
+				this.loading = false
+				this.$buefy.toast.open({
+					message: 'Algo deu errado! 😔',
+					type: 'is-danger',
+					duration: 4000
+				})
 			})
 		}
 	}
