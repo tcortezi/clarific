@@ -1,10 +1,47 @@
 <template>
 	<div>
-		<form action="/api/contact" method="POST">
-			<input type="text" name="name" value="Rodrigo">	
-			<input type="text" name="email" value="rodrigovcortezi@gmail.com">	
-			<textarea name="msg">teste desenvolvimento [website form]</textarea>
-			<button type="submit">Enviar</button>
+		<form @submit.prevent="submitForm">
+			<b-field label="Nome">
+				<b-input v-model="name"></b-input>
+			</b-field>
+			<b-field label="Email">
+				<b-input v-model="email"></b-input>
+			</b-field>
+			<b-input v-model="msg" type="textarea">teste desenvolvimento [website form]</b-input>
+			<b-field>
+				<p class="control">
+					<button type="submit" class="button">
+						Enviar
+					</button>
+				</p>
+			</b-field>
 		</form>
 	</div>
 </template>
+
+<script>
+const url = '/api/contact'
+export default {
+	data() {
+		return {
+			name: 'Rodrigo',
+			email: 'rodrigovcortezi@gmail.com',
+			msg: 'teste de desenvolvimento [website form]'
+		}
+	},
+	methods: {
+		submitForm() {
+			console.log('submitForm')
+			this.$axios.$post(url, {
+				name: this.name,
+				email: this.email,
+				msg: this.msg
+			}).then((response) => {
+				console.log('success')
+			}).catch((error) => {
+				console.log('error')
+			})
+		}
+	}
+}
+</script>

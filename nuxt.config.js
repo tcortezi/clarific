@@ -59,6 +59,10 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    https: true,
+    host: process.env.NODE_ENV === 'production' ? 'clarific.com.br' : 'localhost',
+    port: process.env.PORT,
+    progress: false
   },
   /*
   ** Build configuration

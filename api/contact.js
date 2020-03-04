@@ -8,7 +8,6 @@ SendGridMail.setApiKey(process.env.SENDGRID_API_KEY)
 const app = express()
 
 app.use(express.json())
-app.use(express.urlencoded())
 
 app.post('/', (req, res) => {
 	// Validate, sanitize and send
