@@ -24,9 +24,9 @@ const url = '/api/contact'
 export default {
 	data() {
 		return {
-			name: 'Rodrigo',
-			email: 'rodrigovcortezi@gmail.com',
-			msg: 'teste de desenvolvimento [website form]'
+			name: '',
+			email: '',
+			msg: ''
 		}
 	},
 	methods: {
