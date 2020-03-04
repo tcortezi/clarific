@@ -27,9 +27,9 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="buttons">
-              <a class="button contato">
+              <nuxt-link to="/contact" class="button contato">
                 Contato
-              </a>
+              </nuxt-link>
             </div>
           </div>
         </div>

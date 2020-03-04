@@ -89,4 +89,8 @@ sw.*
 # Vim swap files
 *.swp
 
+# Now file
 .now
+
+# SendGrid API Key file
+sendgrid.env

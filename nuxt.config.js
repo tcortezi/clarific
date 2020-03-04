@@ -31,6 +31,12 @@ export default {
   plugins: [
   ],
   /*
+  ** Server Middlewares
+  */
+  serverMiddleware: [
+    '~/api/contact'
+  ],
+  /*
   ** Nuxt.js dev-modules
   */
   buildModules: [

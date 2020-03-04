@@ -18,7 +18,7 @@
             <nuxt-link to="/projects">Cases</nuxt-link>
             <nuxt-link to="/services">Serviços</nuxt-link>
             <nuxt-link to="/about">Sobre</nuxt-link>
-            <a>Contato</a>
+            <nuxt-link to="/contact">Contato</nuxt-link>
           </div>
         </div>
         <div class="column app">
