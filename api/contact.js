@@ -11,7 +11,14 @@ app.use(express.json())
 
 app.post('/', (req, res) => {
 	// Validate, sanitize and send
-	const attributes = ['name', 'email', 'msg']
+	const attributes = [
+		'name',
+		'email',
+		'areaCode',
+		'phoneNumber',
+		'contactPreference',
+		'msg'
+	]
 	const sanitizedAttributes = attributes.map(n => validateAndSanitize(n, req.body[n]))
 
 	const someInvalid = sanitizedAttributes.some(r => !r)
@@ -26,6 +33,9 @@ app.post('/', (req, res) => {
 const rejectFunctions = new Map([
 	['name', v => v.length < 4],
 	['email', v => !validator.isEmail(v)],
+	['areaCode', v => v.length != 2],
+	['phoneNumber', v => v.length > 9],
+	['contactPreference', v => !['email', 'phone'].includes(v)],
 	['msg', v => v.length < 15]
 ])
 
@@ -33,12 +43,13 @@ const validateAndSanitize = (key, value) => {
 	return rejectFunctions.has(key) && !rejectFunctions.get(key)(value) && xssFilters.inHTMLData(value)
 }
 
-const sendMail = (name, email, msg) => {
+const sendMail = (name, email, areaCode, phoneNumber, contactPreference, msg) => {
+	const contactInfo = `${name} | +55 ${areaCode} ${phoneNumber} | Preferência de contato: ${contactPreference}`
 	SendGridMail.send({
 		to: 'oi@clarific.com.br',
 		from: email,
 		subject: `Website: Formulário de contato [${name}]`,
-		text: msg
+		text: contactInfo + '\n\n' + msg
 	})
 }
 
