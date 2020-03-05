@@ -40,6 +40,9 @@
 	                <option value="phone">
 						Celular
 	                </option>
+	                <option value="whatsapp">
+						WhatsApp
+	                </option>
 	            </b-select>
 	        </b-field>
 			<b-field

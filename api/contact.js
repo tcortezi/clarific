@@ -34,7 +34,7 @@ const rejectFunctions = new Map([
 	['email', v => !validator.isEmail(v)],
 	['areaCode', v => v.length != 2],
 	['phoneNumber', v => v.length > 9],
-	['contactPreference', v => !['email', 'phone'].includes(v)],
+	['contactPreference', v => !['email', 'phone', 'whatsapp'].includes(v)],
 	['msg', v => v.length < 15]
 ])
 
