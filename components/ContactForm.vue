@@ -27,8 +27,7 @@
 				</b-input>
 			</b-field>
 			<b-field label="Celular">
-				<b-input v-model="phone.areaCode"></b-input>
-				<b-input v-model="phone.number"></b-input>
+				<b-input v-model="phone"></b-input>
 			</b-field>
 			<b-field
 				:type="{'is-danger': $v.contactPreference.$error}"
@@ -68,7 +67,17 @@
 
 <script>
 import { required, email as isEmail } from 'vuelidate/lib/validators'
+
 const url = '/api/contact'
+
+const parsePhone = (phone) => {
+	const raw = phone.replace(/[^\d]/g, '')
+	const areaCode = raw.slice(0, 2)
+	const phoneNumber = raw.slice(2)
+
+	return { areaCode, phoneNumber }
+}
+
 export default {
 	data() {
 		return {
@@ -76,10 +85,7 @@ export default {
 			name: null,
 			email: null,
 			contactPreference: null,
-			phone: {
-				areaCode: null,
-				number: null
-			},
+			phone: null,
 			msg: null
 		}
 	},
@@ -107,8 +113,8 @@ export default {
 			this.$axios.$post(url, {
 				name: this.name,
 				email: this.email,
-				areaCode: this.phone.areaCode,
-				phoneNumber: this.phone.number,
+				areaCode: parsePhone(this.phone).areaCode,
+				phoneNumber: parsePhone(this.phone).phoneNumber,
 				contactPreference: this.contactPreference,
 				msg: this.msg
 			}).then((response) => {
