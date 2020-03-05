@@ -1,18 +1,40 @@
 <template>
 	<div>
 		<form @submit.prevent="submitForm">
-			<b-field label="Nome">
-				<b-input v-model="name"></b-input>
+			<b-field
+				label="Nome"
+				:type="{'is-danger': $v.name.$error}"
+				:message="{'Campo obrigatório.': $v.name.$error && !$v.name.required}"
+			>
+				<b-input
+					:value="$v.name.$model"
+					@change.native="$v.name.$model = $event.target.value.trim()"
+				>
+				</b-input>
 			</b-field>
-			<b-field label="Email">
-				<b-input v-model="email"></b-input>
+			<b-field
+				label="E-mail"
+				:type="{'is-danger': $v.email.$error}"
+				:message="{
+					'Campo obrigatório.': $v.email.$error && !$v.email.required,
+					'Campo inválido.': $v.email.$error && !$v.email.isEmail
+				}"
+			>
+				<b-input
+					:value="$v.email.$model"
+					@change.native="$v.email.$model = $event.target.value.trim()"
+				>
+				</b-input>
 			</b-field>
 			<b-field label="Celular">
 				<b-input v-model="phone.areaCode"></b-input>
 				<b-input v-model="phone.number"></b-input>
 			</b-field>
-			<b-field>
-	            <b-select v-model="contactPreference" placeholder="Preferência de contato">
+			<b-field
+				:type="{'is-danger': $v.contactPreference.$error}"
+				:message="{'Campo obrigatório.': $v.contactPreference.$error && !$v.contactPreference.required}"
+			>
+	            <b-select placeholder="Preferência de contato" v-model="$v.contactPreference.$model">
 	                <option value="email">
 						E-mail
 	                </option>
@@ -21,7 +43,18 @@
 	                </option>
 	            </b-select>
 	        </b-field>
-			<b-input v-model="msg" type="textarea" placeholder="Comentários"></b-input>
+			<b-field
+				:type="{'is-danger': $v.msg.$error}"
+				:message="{'Campo obrigatório.': $v.msg.$error && !$v.msg.required}"
+			>
+				<b-input
+					type="textarea"
+					placeholder="Comentários"
+					:value="$v.msg.$model"
+					@change.native="$v.msg.$model = $event.target.value.trim()"
+				>
+				</b-input>
+			</b-field>
 			<b-field>
 				<p class="control">
 					<button type="submit" class="button" :class="{ 'is-loading': loading }">
@@ -34,6 +67,7 @@
 </template>
 
 <script>
+import { required, email as isEmail } from 'vuelidate/lib/validators'
 const url = '/api/contact'
 export default {
 	data() {
@@ -49,8 +83,26 @@ export default {
 			msg: null
 		}
 	},
+	validations: {
+		name: {
+			required
+		},
+		email: {
+			required,
+			isEmail
+		},
+		contactPreference: {
+			required
+		},
+		msg: {
+			required
+		}
+	},
 	methods: {
 		submitForm() {
+			this.$v.$touch()
+			if(this.$v.$invalid) return
+
 			this.loading = true
 			this.$axios.$post(url, {
 				name: this.name,
