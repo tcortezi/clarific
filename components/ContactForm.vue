@@ -27,7 +27,7 @@
 				</b-input>
 			</b-field>
 			<b-field label="Celular">
-				<b-input v-model="phone"></b-input>
+				<b-input v-model="phone" v-mask="'(99) 9 9999-9999'"></b-input>
 			</b-field>
 			<b-field
 				:type="{'is-danger': $v.contactPreference.$error}"

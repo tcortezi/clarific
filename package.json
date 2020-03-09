@@ -16,6 +16,7 @@
     "@nuxtjs/google-tag-manager": "^2.3.1",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@sendgrid/mail": "^6.5.3",
+    "awesome-mask": "^1.1.1",
     "lottie-web": "^5.6.4",
     "node-sass": "^4.13.0",
     "nuxt": "^2.0.0",
