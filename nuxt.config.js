@@ -36,7 +36,7 @@ export default {
   ** Server Middlewares
   */
   serverMiddleware: [
-    '~/api/contact'
+    '~/api/_contact'
   ],
   /*
   ** Nuxt.js dev-modules
