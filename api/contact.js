@@ -9,7 +9,7 @@ const app = express()
 
 app.use(express.json())
 
-app.post('/api/contact', (req, res) => {
+app.post('/api/contact', async (req, res) => {
 	const attributes = [
 		'name',
 		'email',
@@ -25,8 +25,13 @@ app.post('/api/contact', (req, res) => {
 		return res.status(422).json({ 'error': 'Hmm... parece que algum campo está inválido.' })
 	}
 
-	sendMail(...sanitizedAttributes)
-	res.status(200).json({ 'message': 'E-mail enviado com sucesso.' })
+	try {
+		await sendMail(...sanitizedAttributes)
+		res.status(200).json({ message: 'E-mail enviado com sucesso.' })
+	} catch(err) {
+		console.error(err.toString())
+		res.status(502).json({ error: err.toString() })
+	}
 })
 
 const rejectFunctions = new Map([
@@ -44,7 +49,7 @@ const validateAndSanitize = (key, value) => {
 
 const sendMail = (name, email, areaCode, phoneNumber, contactPreference, msg) => {
 	const contactInfo = `${name} | +55 ${areaCode} ${phoneNumber} | Preferência de contato: ${contactPreference}`
-	SendGridMail.send({
+	return SendGridMail.send({
 		to: 'oi@clarific.com.br',
 		from: 'contactform@clarific.com.br',
 		reply_to: email,
