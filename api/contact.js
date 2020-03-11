@@ -46,7 +46,8 @@ const sendMail = (name, email, areaCode, phoneNumber, contactPreference, msg) =>
 	const contactInfo = `${name} | +55 ${areaCode} ${phoneNumber} | Preferência de contato: ${contactPreference}`
 	SendGridMail.send({
 		to: 'oi@clarific.com.br',
-		from: email,
+		from: 'contactform@clarific.com.br',
+		reply_to: email,
 		subject: `Website: Formulário de contato [${name}]`,
 		text: contactInfo + '\n\n' + msg
 	})
