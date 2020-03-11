@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production'
+const isServerlessEnviroment = !!process.env.NOW_REGION
 
 export default {
   mode: 'universal',
@@ -35,9 +37,7 @@ export default {
   /*
   ** Server Middlewares
   */
-  serverMiddleware: [
-    '~/api/_contact'
-  ],
+  serverMiddleware: isServerlessEnviroment ? [] : ['~/api/contact'],
   /*
   ** Nuxt.js dev-modules
   */
@@ -62,8 +62,8 @@ export default {
   */
   axios: {
     https: true,
-    host: process.env.NODE_ENV === 'production' ? 'clarific.com.br' : 'localhost',
-    port: process.env.PORT,
+    baseUrl: isProd ? 'clarific.com.br' : 'localhost:3000',
+    browserBaseURL: '/',
     progress: false
   },
   /*

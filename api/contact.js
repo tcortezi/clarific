@@ -9,7 +9,7 @@ const app = express()
 
 app.use(express.json())
 
-app.post('/', (req, res) => {
+app.post('/api/contact', (req, res) => {
 	const attributes = [
 		'name',
 		'email',
@@ -52,7 +52,4 @@ const sendMail = (name, email, areaCode, phoneNumber, contactPreference, msg) =>
 	})
 }
 
-export default {
-	path: '/api/contact',
-	handler: app
-}
+export default app
