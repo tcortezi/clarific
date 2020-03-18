@@ -59,8 +59,17 @@
 			</b-field>
 			<b-field>
 				<p class="control">
-					<button type="submit" class="button" :class="{ 'is-loading': loading }">
-						Enviar
+					<button
+						type="submit"
+						class="button"
+						:class="{
+							'is-loading': loading,
+							'is-success': submitted
+						}"
+						:disabled="submitted"
+					>
+						<span v-show="submitted">Enviado</span>
+						<span v-show="!submitted">Enviar</span>
 					</button>
 				</p>
 			</b-field>
@@ -85,6 +94,7 @@ export default {
 	data() {
 		return {
 			loading: false,
+			submitted: false,
 			name: null,
 			email: null,
 			contactPreference: null,
@@ -122,6 +132,7 @@ export default {
 				msg: this.msg
 			}).then((response) => {
 				this.loading = false
+				this.submitted = true
 				this.$gtm.push({ event: 'formSubmit' })
 				this.$buefy.toast.open({
 					message: 'Recebemos sua mensagem! 😍',
@@ -140,3 +151,9 @@ export default {
 	}
 }
 </script>
+
+<style>
+	button[type=submit]:disabled {
+		cursor: default;
+	}
+</style>
