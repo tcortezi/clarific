@@ -81,12 +81,6 @@ const parsePhone = (phone) => {
 	return { areaCode, phoneNumber }
 }
 
-const googleTagManager = {
-	trigger(event) {
-		dataLayer.push({ event })
-	}
-}
-
 export default {
 	data() {
 		return {
@@ -128,7 +122,7 @@ export default {
 				msg: this.msg
 			}).then((response) => {
 				this.loading = false
-				googleTagManager.trigger('formSubmit')
+				this.$gtm.push({ event: 'formSubmit' })
 				this.$buefy.toast.open({
 					message: 'Recebemos sua mensagem! 😍',
 					type: 'is-success',

@@ -42,6 +42,7 @@ export default {
   ** Nuxt.js dev-modules
   */
   buildModules: [
+    '@nuxtjs/gtm'
   ],
   /*
   ** Nuxt.js modules
@@ -53,8 +54,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
-    ['@nuxtjs/google-tag-manager', { id: 'GTM-5SKDTQ5' }]
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
@@ -65,6 +65,12 @@ export default {
     baseUrl: isProd ? 'clarific.com.br' : 'localhost:3000',
     browserBaseURL: '/',
     progress: false
+  },
+  /*
+  ** Google Tag Manager config
+  */
+  gtm: {
+    id: 'GTM-5SKDTQ5'
   },
   /*
   ** Build configuration
