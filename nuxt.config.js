@@ -70,7 +70,8 @@ export default {
   ** Google Tag Manager config
   */
   gtm: {
-    id: 'GTM-5SKDTQ5'
+    id: 'GTM-5SKDTQ5',
+    pageTracking: true
   },
   /*
   ** Build configuration
