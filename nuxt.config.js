@@ -1,5 +1,5 @@
 const isProd = process.env.NODE_ENV === 'production'
-const isServerlessEnviroment = !!process.env.NOW_REGION
+const apiUrl = isProd ? 'https://clarific-api.herokuapp.com' : 'http://localhost:3000'
 
 export default {
   mode: 'universal',
@@ -35,10 +35,6 @@ export default {
     '~/plugins/mask.js'
   ],
   /*
-  ** Server Middlewares
-  */
-  serverMiddleware: isServerlessEnviroment ? [] : ['~/api/contact'],
-  /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
@@ -62,9 +58,11 @@ export default {
   */
   axios: {
     https: true,
-    baseUrl: isProd ? 'clarific.com.br' : 'localhost:3000',
-    browserBaseURL: '/',
+    proxy: true,
     progress: false
+  },
+  proxy: {
+    '/api/': { target: apiUrl, pathRewrite: { '^/api/': '' } }
   },
   /*
   ** Google Tag Manager config
