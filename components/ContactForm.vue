@@ -80,7 +80,7 @@
 <script>
 import { required, email as isEmail } from 'vuelidate/lib/validators'
 
-const url = '/api/contact'
+const url = '/api/v1/contact'
 
 const parsePhone = (phone) => {
 	const raw = phone.replace(/[^\d]/g, '')

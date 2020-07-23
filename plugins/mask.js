@@ -1,4 +1,3 @@
 import Vue from 'vue'
-import AwesomeMask from 'awesome-mask'
-
-Vue.directive('mask', AwesomeMask)
+import VueMask from 'v-mask'
+Vue.use(VueMask)

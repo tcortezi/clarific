@@ -1,5 +1,4 @@
 const isProd = process.env.NODE_ENV === 'production'
-const isServerlessEnviroment = !!process.env.NOW_REGION
 
 export default {
   mode: 'universal',
@@ -25,6 +24,7 @@ export default {
   ** Global CSS
   */
   css: [
+    // TODO: Alterar custom.scss para tratar home e lps
     '@/assets/scss/custom.scss'
   ],
   /*
@@ -32,12 +32,14 @@ export default {
   */
   plugins: [
     '~/plugins/vuelidate.js',
+    { src: '~/plugins/validate', mode: 'client' },
+    '~/plugins/awesome-mask.js',
     '~/plugins/mask.js'
   ],
   /*
   ** Server Middlewares
   */
-  serverMiddleware: isServerlessEnviroment ? [] : ['~/api/contact'],
+  serverMiddleware: [],
   /*
   ** Nuxt.js dev-modules
   */
@@ -48,13 +50,10 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    ['vue-scrollto/nuxt', { container: 'html' }]
   ],
   /*
   ** Axios module configuration
