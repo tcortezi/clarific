@@ -133,7 +133,7 @@ export default {
 			}).then((response) => {
 				this.loading = false
 				this.submitted = true
-				this.$gtm.push({ event: 'formSubmit' })
+				this.$gtm.push({ event: 'formSubmit', label: 'home-contact' })
 				this.$buefy.toast.open({
 					message: 'Recebemos sua mensagem! 😍',
 					type: 'is-success',
