@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default">
     <canvas ref="canvas"></canvas>
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
@@ -131,11 +131,22 @@
       this.$refs.canvas.width  = window.innerWidth
       this.generateNoise()
       requestAnimationFrame(this.moveNoise)
+    },
+    head() {
+      return {
+        title: 'Landing page premium - Design e desenvolvimento - Clarific',
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/fav.png' }
+      ]
+      }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+div.default {
+  background-color: #191A1E;
+}
   nav {
     padding-top: 6.48vh;
     padding-left: 6.25vw;

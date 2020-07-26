@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="home">
 		<canvas ref="canvas"></canvas>
 		<nuxt />
 		<footer>
@@ -27,53 +27,21 @@
 
 <script>
 export default{
-  methods: {
-    generateNoise() {
-		this.noise = document.createElement('canvas')
-		this.noise.height = window.innerHeight * 2
-		this.noise.width  = window.innerWidth * 2
-		let noiseContext = this.noise.getContext('2d')
-		let noiseData = noiseContext.createImageData(
-		this.noise.width,
-		this.noise.height
-		)
-		let buffer32 = new Uint32Array(noiseData.data.buffer)
-		let len = buffer32.length - 1
-		while (len--) {
-		buffer32[len] = Math.random() < 0.5 ? 0 : -1 >> 0
+	head() {
+		return {
+			title: 'Landing page premium - Design e desenvolvimento - Clarific',
+    link: [
+      { rel: 'icon', type: 'image/png', href: '/fav.png' }
+    ]
 		}
-		noiseContext.putImageData(noiseData, 0, 0)
-    },
-    moveNoise() {
-		let canvas  = this.$refs.canvas
-		let context = canvas.getContext('2d')
-		let x = Math.random() * canvas.width
-		let y = Math.random() * canvas.height
-		context.clearRect(0, 0, canvas.width, canvas.height)
-		context.drawImage(this.noise, -x, -y)
-		requestAnimationFrame(this.moveNoise)
-    }
-  },
-  mounted() {
-		this.$refs.canvas.height = window.innerHeight
-		this.$refs.canvas.width  = window.innerWidth
-		this.generateNoise()
-		requestAnimationFrame(this.moveNoise)
-  }
+	}
 }
 </script>
 
 <style lang="scss" scoped>
-	canvas{
-	  height: 100%;
-	  left: 0;
-	  mix-blend-mode: soft-light;
-	  opacity: 0.02;
-	  pointer-events: none;
-	  position: fixed;
-	  top: 0;
-	  width: 100%;
-	  z-index: -100;
+	div.home {
+		background-color: #191A1E;
+		height: 100vh;
 	}
 	footer {
 		position: absolute;

@@ -11,7 +11,7 @@
           <p class="dic">
             V.t.d <b>1.</b> Tornar(-se) claro <br />
             <span class="highlight">
-              <b>2.</b> <strong>Design e desenvolvimento</strong> de produtos digitais
+              <span><b>2.</b> <strong>Design e desenvolvimento</strong> de produtos digitais</span>
             </span>
           </p>
           <div class="menu">
@@ -60,7 +60,8 @@ section {
         overflow: visible;
         margin-top: 18px;
         color: rgba(255, 255, 255, 1);
-        > strong { color: white; font-weight: bold; }
+        > span { z-index: 30; position: relative; }
+        strong { color: white; font-weight: bold; }
         &::after {
           content: '';
           position: absolute;
@@ -68,9 +69,9 @@ section {
           left: 0;
           width: 502px;
           height: 45px;
-          background-image: url('../assets/home/highlight.svg');
+          background-image: url('~assets/home/highlight.svg');
           background-size: 502px 45px;
-          z-index: -1;
+          z-index: 0;
           margin-left: -10px;
         }
       }

@@ -1,51 +1,39 @@
 @import "~bulma/sass/utilities/_all";
-
+@import "font";
 $family-primary: 'Inter', sans-serif;
 @supports (font-variation-settings: normal) {
   html { font-family: 'Inter var', sans-serif; }
 }
 
-$primary: #8E54E9;
-$primary-invert: findColorInvert($primary);
-
-$body-background-color: #191A1E;
+$danger: #BC5959;
 
 $colors: (
-    "white": ($white, $black),
-    "black": ($black, $white),
-    "light": ($light, $light-invert),
-    "dark": ($dark, $dark-invert),
-    "primary": ($primary, $primary-invert),
-    "info": ($info, $info-invert),
-    "success": ($success, $success-invert),
-    "warning": ($warning, $warning-invert),
-    "danger": ($danger, $danger-invert)
+  "white": ($white, $black),
+  "black": ($black, $white),
+  "light": ($light, $light-invert),
+  "dark": ($dark, $dark-invert),
+  "primary": ($primary, $primary-invert),
+  "info": ($info, $info-invert),
+  "success": ($success, $success-invert),
+  "warning": ($warning, $warning-invert),
+  "danger": ($danger, $danger-invert)
 );
-
-$link: #b087f0;
-$link-invert: $primary-invert;
-$link-focus-border: $primary;
-
-$column-gap: 2rem;
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
-@import "font";
 
 html {
-    overflow-y: auto;
-    position: relative;
-    min-height: 100%;
+  overflow-y: auto;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
-    margin-bottom: 36px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  color: #1a1a1a;
 }
 
-em.tooltip {
-    border-bottom: 1px dashed $link;
+strong {
+  color: inherit;
 }
-
-p { cursor: default; }

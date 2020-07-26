@@ -50,15 +50,7 @@
 			Section12,
 			Whatsapp
 		},
-		layout: 'landing',
-		head() {
-			return {
-				title: 'Landing page premium - Design e desenvolvimento - Clarific',
-	    link: [
-	      { rel: 'icon', type: 'image/png', href: '/fav-lp-2.png' }
-	    ]
-			}
-		}
+		layout: 'landing'
 	}
 </script>
 
