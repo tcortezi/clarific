@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 section {
-  margin-top: 124px;
+  padding-top: 124px;
   .column:first-of-type {
     p.lat { 
       margin-top: 40px;

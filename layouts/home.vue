@@ -1,6 +1,5 @@
 <template>
 	<div class="home">
-		<canvas ref="canvas"></canvas>
 		<nuxt />
 		<footer>
 			<div class="container">
