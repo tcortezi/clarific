@@ -133,7 +133,11 @@ section {
 
 @media screen and (max-width: 769px) {
   section {
-    margin-top: unset;
+    padding-top: unset;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
     img.is-hidden-desktop { height: 60px; }
     .columns {
       display: flex;
