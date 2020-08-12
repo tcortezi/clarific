@@ -156,6 +156,8 @@
 			padding-bottom: 100px;
 			@media (max-width: 769px) {
 				width: auto;
+				display: block;
+				margin-top: 32px;
 			}
 			h1 {
 				font-weight: 300;
@@ -181,7 +183,6 @@
 				max-width: 289px;
 				@media (max-width: 769px) {
 					padding: 25px 32px;
-					max-width: 258px;
 				}
 				> span {
 					z-index: 30;
