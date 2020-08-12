@@ -115,10 +115,6 @@
 			right: 64px;
 			top: -100px;
 			z-index: 0;
-			@media (max-width: 769px) {
-				right: -500px;
-				top: -400px;
-			}
 			@media (max-width: 1600px) {
 				right: 0;
 			}
@@ -130,6 +126,10 @@
 			}
 			@media (max-width: 1000px) {
 				right: -300px;
+			}
+			@media (max-width: 769px) {
+				right: -500px;
+				top: -400px;
 			}
 		}
 		.container {
@@ -179,6 +179,10 @@
 				line-height: 20px;
 				color: #FAFAFA;
 				max-width: 289px;
+				@media (max-width: 769px) {
+					padding: 25px 32px;
+					max-width: 258px;
+				}
 				> span {
 					z-index: 30;
 					position: relative;
