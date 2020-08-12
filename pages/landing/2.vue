@@ -13,7 +13,7 @@
 		<section-10 />
 		<section-11 />
 		<section-12 />
-		<whatsapp class="fixedBtn" />
+		<whatsapp class="fixedBtn" @action-click="whatsappClicked" />
 	</div>
 </template>
 
@@ -57,6 +57,11 @@
 	    	link: [
 	      	{ rel: 'icon', type: 'image/png', href: '/fav-lp-2.png' }
 	    	]
+			}
+		},
+		methods: {
+			whatsappClicked() {
+				this.$gtm.push({ event: 'whatsappLink', label: 'lp2-contact' })
 			}
 		}
 	}

@@ -44,7 +44,7 @@
 					this.loading = true
 					await this.$axios.$post('/api/v2/contact', formData)
 					this.success = true
-					this.$gtm.push({ event: 'formSubmit', label: 'lp2-contact' })
+					this.$gtm.push({ event: 'formSubmit', label: 'lp1-contact' })
 					this.isModalActive = true
 					this.name = formData.name
 				} catch(err) {

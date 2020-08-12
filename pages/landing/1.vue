@@ -7,7 +7,7 @@
 		<workflow />
 		<section4 />
 		<section5 />
-		<whatsapp class="fixedBtn" />
+		<whatsapp class="fixedBtn" @action-click="whatsappClicked" />
 	</div>
 </template>
 
@@ -38,6 +38,11 @@
 	    	link: [
 	      	{ rel: 'icon', type: 'image/png', href: '/fav-lp-2.png' }
 	    	]
+			}
+		},
+		methods: {
+			whatsappClicked() {
+				this.$gtm.push({ event: 'whatsappLink', label: 'lp1-contact' })
 			}
 		}
 	}
