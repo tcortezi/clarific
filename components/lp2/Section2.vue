@@ -6,9 +6,9 @@
 					<img src="~/assets/img/lp2/section2.svg">
 				</div>
 				<div class="column is-6">
-					<h5 class="lp2">Primeiro passo</h5>
-					<h2 class="lp2">Nós identificamos que você é nosso público-alvo</h2>
-					<p class="lp2">Sim, pagamos cerca de <strong>R$ 1</strong> para trazer você aqui.</p>
+					<h5 class="lp">Primeiro passo</h5>
+					<h2 class="lp">Nós identificamos que você é nosso público-alvo</h2>
+					<p class="lp">Sim, pagamos cerca de <strong>R$ 1</strong> para trazer você aqui.</p>
 				</div>
 			</div>
 		</div>	

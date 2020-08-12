@@ -4,7 +4,7 @@
 			<a @click="$parent.close()" class="back"><- <span>Voltar</span></a>
 			<div class="columns is-centered">
 				<div class="column is-narrow">
-					<h2 class="lp2">{{ title }}</h2>
+					<h2 class="lp">{{ title }}</h2>
 					<img :src="require(`~/assets/img/lp2/${img}`)">
 				</div>
 			</div>

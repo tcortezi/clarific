@@ -6,9 +6,9 @@
 					<img src="~/assets/img/lp2/section6.svg">
 				</div>
 				<div class="column">
-					<h5 class="lp2">Quinto passo</h5>
-					<h2 class="lp2">Hora de colocar o design em prática</h2>
-					<p class="lp2">Seguimos em frente: desenhamos as ilustrações, juntamos todos os ingredientes e <strong>montamos um protótipo.</strong></p>
+					<h5 class="lp">Quinto passo</h5>
+					<h2 class="lp">Hora de colocar o design em prática</h2>
+					<p class="lp">Seguimos em frente: desenhamos as ilustrações, juntamos todos os ingredientes e <strong>montamos um protótipo.</strong></p>
 				</div>
 			</div>
 		</div>

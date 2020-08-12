@@ -2,8 +2,8 @@
 	<section class="section" id="form">
 		<div class="container">
 			<div class="center">
-				<h2 class="lp">Último e mais importante passo</h2>
-				<p class="lp">Acreditamos que, depois de toda esta jornada, você já esteja convencido que podemos ajudá-lo a desenvolver uma <em>landing page</em> que realmente criará um impacto nas suas vendas. <strong>Agora basta mandar um alô pra gente para começarmos seu projeto!</strong> 😎</p>
+				<h2 class="lp">Vamos falar sobre o seu projeto</h2>
+				<p class="lp">Agora que você já conhece o nosso trabalho e sabe que podemos ajudá-lo a desenvolver um website de qualidade para atender seus usuários, mande um alô pra gente e vamos conversar!</p>
 			</div>
 			<div class="columns is-centered">
 				<div class="column is-5">

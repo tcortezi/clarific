@@ -583,7 +583,7 @@
 	    return {
 	      strategyOptions: {
 	        animationData: require(`~/assets/services/strategy.json`),
-	        loop: false,
+	        loop: true,
 	        autoplay: false,
 	        prerender: true
 	      },

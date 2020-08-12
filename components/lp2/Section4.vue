@@ -6,9 +6,9 @@
 					<img src="~/assets/img/lp2/section4.svg">
 				</div>
 				<div class="column">
-					<h5 class="lp2">Terceiro passo</h5>
-					<h2 class="lp2">Nós <em>brainstormamos</em></h2>
-					<p class="lp2">Foi nesta etapa que a ideia de criar uma “<em>landing page</em> sobre <em>landing page</em>” <strong>nasceu</strong>.</p>
+					<h5 class="lp">Terceiro passo</h5>
+					<h2 class="lp">Nós <em>brainstormamos</em></h2>
+					<p class="lp">Foi nesta etapa que a ideia de criar uma “<em>landing page</em> sobre <em>landing page</em>” <strong>nasceu</strong>.</p>
 				</div>
 			</div>
 		</div>

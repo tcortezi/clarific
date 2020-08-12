@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="columns is-variable is-8 is-vcentered">
 				<div class="column">
-					<h2 class="lp">Quer pular as etapas e começar agora?</h2>
+					<h2 class="lp">Vamos conversar sobre seu projeto?</h2>
 				</div>
 				<div class="column has-text-right">
 					<a class="btn-lp" v-scroll-to="{
@@ -23,6 +23,8 @@
 
 <style lang="scss" scoped>
 	.section {
+		margin-top: 52px;
+		margin-bottom: 100px;
 		@media (max-width: 769px) {
 			.columns {
 				display: flex;

@@ -4,8 +4,8 @@
 			<a @click="$parent.close()" class="back"><- <span>Voltar</span></a>
 			<div class="columns is-centered">
 				<div class="column is-narrow">
-					<h2 class="lp2 has-text-success">Obrigado, {{ name }}</h2>
-					<p class="lp2">Recebemos sua mensagem e responderemos o mais breve possível! 😉</p>
+					<h2 class="lp has-text-success">Obrigado, {{ name }}</h2>
+					<p class="lp">Recebemos sua mensagem e responderemos o mais breve possível! 😉</p>
 				</div>
 			</div>
 		</div>

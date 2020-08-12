@@ -3,9 +3,9 @@
 		<div class="container">
 			<div class="columns is-variable is-8 is-vcentered">
 				<div class="column">
-					<h5 class="lp2">Sexto passo</h5>
-					<h2 class="lp2">Tecnologia entra em cena</h2>
-					<p class="lp2">Transformamos o protótipo em código. Usamos nossa experiência e tecnologias <em>cutting edge</em> para entregar performance e solidez. Isso significa que a página carrega em ~1 segundo e tudo é exibido como deveria.</p>
+					<h5 class="lp">Sexto passo</h5>
+					<h2 class="lp">Tecnologia entra em cena</h2>
+					<p class="lp">Transformamos o protótipo em código. Usamos nossa experiência e tecnologias <em>cutting edge</em> para entregar performance e solidez. Isso significa que a página carrega em ~1 segundo e tudo é exibido como deveria.</p>
 				</div>
 				<div class="column">
 					<img src="~/assets/img/lp2/section7.svg">

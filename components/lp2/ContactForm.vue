@@ -1,6 +1,6 @@
 <template>
 	<ValidationObserver v-slot="{ handleSubmit }">
-		<form @submit.prevent="handleSubmit(onSubmit)" class="lp2">
+		<form @submit.prevent="handleSubmit(onSubmit)" class="lp">
 		  
 		  <ValidationProvider name="name" rules="required" v-slot="{ errors, classes }">
 			  <div class="control">
@@ -70,7 +70,7 @@
       <div class="center">
 				<button
 					type="submit"
-					class="btn-lp2 highlight"
+					class="btn-lp highlight"
 					:class="{'button is-loading': loading}"
 				>
 					<span>
@@ -121,7 +121,7 @@ export default {
 	display: grid;
 	place-items: center;
 }
-.btn-lp2 {
+.btn-lp {
 	min-height: 73px;
 	@media (max-width: 769px) {
 		min-height: 70px;

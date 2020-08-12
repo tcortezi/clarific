@@ -7,14 +7,14 @@
 		<div class="container">
 			<div class="columns">
 				<div class="column">
-					<h1 class="lp2">
+					<h1 class="lp">
 						Criamos Esta <br />
 						Landing Page
 					</h1>
-					<p class="subtitle lp2">
+					<p class="subtitle lp">
 						para que você entenda como fazemos <strong><em>landing pages</em></strong> e decida fazer a sua com a gente.
 					</p>
-					<a class="btn-lp2" v-scroll-to="{
+					<a class="btn-lp" v-scroll-to="{
 							el: '#how',
 							offset: -60
 						}">
@@ -47,7 +47,7 @@
 			}
 			align-items: center;
 		}
-		.btn-lp2 {
+		.btn-lp {
 			margin-top: 10px;
 		}
 		.down {

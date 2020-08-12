@@ -3,8 +3,8 @@
 		<div class="container">
 			<div class="columns is-centered">
 				<div class="column is-narrow">
-					<h2 class="lp2 has-text-centered">Esta <em>landing page</em> nos ajudou a encontrar nossos clientes</h2>
-					<p class="lp2 has-text-centered">Como por exemplo:</p>
+					<h2 class="lp has-text-centered">Esta <em>landing page</em> nos ajudou a encontrar nossos clientes</h2>
+					<p class="lp has-text-centered">Como por exemplo:</p>
 				</div>
 			</div>
 			<div class="portfolio">
@@ -31,7 +31,7 @@
 			</div>
 		</div>
 		<b-modal :active.sync="isModalActive"
-			full-screen :can-cancel="false" custom-class="lp2">
+			full-screen :can-cancel="false" custom-class="lp">
 			<portfolio :title="title" :img="img" />
 		</b-modal>
 	</section>
@@ -56,7 +56,7 @@
 
 <style lang="scss" scoped>
 	.section {
-		h2.lp2 { margin-top: unset; }
+		h2.lp { margin-top: unset; }
 		.columns { margin-bottom: 62px; }
 		.portfolio {
 			display: flex;

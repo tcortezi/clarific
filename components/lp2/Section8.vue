@@ -6,9 +6,9 @@
 					<img src="~/assets/img/lp2/section8.svg">
 				</div>
 				<div class="column">
-					<h5 class="lp2">Sétimo passo</h5>
-					<h2 class="lp2">Instalamos ferramentas analíticas</h2>
-					<p class="lp2">Se você chegou até aqui, mova o cursor do seu mouse. <strong>Estamos te vendo!</strong> :)</p>
+					<h5 class="lp">Sétimo passo</h5>
+					<h2 class="lp">Instalamos ferramentas analíticas</h2>
+					<p class="lp">Se você chegou até aqui, mova o cursor do seu mouse. <strong>Estamos te vendo!</strong> :)</p>
 				</div>
 			</div>
 		</div>
@@ -21,7 +21,7 @@
 			img { max-width: 574px; }
 		}
 		@media (max-width: 769px) {
-			h2.lp2 { font-size: 27px; }
+			h2.lp { font-size: 27px; }
 		}
 	}
 </style>

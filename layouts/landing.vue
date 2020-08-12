@@ -4,21 +4,8 @@
   </div>
 </template>
 
-<script>
-	export default {
-		head() {
-			return {
-				title: 'Landing page premium - Design e desenvolvimento - Clarific',
-	    link: [
-	      { rel: 'icon', type: 'image/png', href: '/fav-lp-2.png' }
-	    ]
-			}
-		}
-	}
-</script>
-
 <style lang="scss">
-	h1.lp2 {
+	h1.lp {
 	  font-style: normal;
 	  font-weight: 800;
 	  font-size: 64px;
@@ -31,7 +18,7 @@
 	  }
 	}
 
-	p.subtitle.lp2 {
+	p.subtitle.lp {
 	  margin-top: 32px;
 	  max-width: 530px;
 	  font-family: Alkes;
@@ -51,7 +38,7 @@
 	  }
 	}
 
-	.btn-lp2 {
+	.btn-lp {
 	  position: relative;
 	  display: inline-block;
 	  padding: 24px 32px;
@@ -96,9 +83,15 @@
 	      }
 	    }
 	  }
+	  &.lp1 {
+	  	padding: 20px 32px;
+			font-weight: 500;
+			font-size: 20px;
+			line-height: 20px;
+	  }
 	}
 
-	h5.lp2 {
+	h5.lp {
 	  font-weight: 600;
 	  font-size: 18px;
 	  line-height: 18px;
@@ -107,10 +100,13 @@
 	    line-height: 16px;
 	  }
 	  color: #F23005;
+	  &.lp1 {
+	  	color: #AFAFAF;
+	  }
 	  text-transform: uppercase;
 	}
 
-	h2.lp2 {
+	h2.lp {
 	  font-style: normal;
 	  font-weight: 800;
 	  font-size: 32px;
@@ -127,7 +123,7 @@
 	  }
 	}
 
-	p.lp2 {
+	p.lp {
 	  font-family: Alkes;
 	  font-style: normal;
 	  font-weight: normal;
@@ -143,7 +139,7 @@
 	  > strong { font-weight: 600; }
 	}
 
-	form.lp2 {
+	form.lp {
 	  input, textarea, select {
 	    border: 1px solid #2D2E30;
 	    padding: 18px;
@@ -188,7 +184,7 @@
 	  .field { position: relative; }
 	}
 
-	.lp2 {
+	.lp {
 	  .section { padding: 6rem 1.5rem; }
 	  .modal-background {
 	    background-color: transparent;
@@ -197,5 +193,9 @@
 	  .modal.is-full-screen > .animation-content {
 	    background: rgba(250, 250, 250, 0.95);
 	  }
+	}
+
+	p.lp + .btn-lp {
+		margin-top: 32px;
 	}
 </style>
