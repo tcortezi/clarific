@@ -1,6 +1,10 @@
 <template>
 	<div>
-		<a href="https://wa.me/5521984441514" target="_blank">
+		<a
+			@click="$emit('action-click')"
+			href="https://wa.me/5521984441514"
+			target="_blank"
+		>
 			<p>
 				Fale com a gente <br />
 				pelo whatsapp
@@ -14,10 +18,6 @@
 		</span>
 	</div>
 </template>
-
-<script>
-	
-</script>
 
 <style lang="scss" scoped>
 	div {
