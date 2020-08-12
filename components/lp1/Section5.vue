@@ -123,11 +123,17 @@
 			position: absolute;
 			bottom: 42px;
 			right: 0;
+			@media (max-width: 769px) {
+				bottom: 100px;
+			}
 		}
 		.right2 {
 			position: absolute;
 			right: 42px;
 			top: 10%;
+			@media (max-width: 769px) {
+				display: none;
+			}
 		}
 		.left {
 			position: absolute;
@@ -145,6 +151,10 @@
 			position: absolute;
 			top: 200px;
 			left: 200px;
+			@media (max-width: 769px) {
+				top: -100px;
+				left: 0;
+			}
 		}
 		.bird {
 			position: absolute;

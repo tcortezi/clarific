@@ -68,4 +68,9 @@
 			margin-top: 42px;
 		}
 	}
+	h2 {
+		@media (max-width: 769px) {
+			text-align: center;
+		}
+	}
 </style>

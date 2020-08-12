@@ -1,9 +1,9 @@
 <template>
 	<section class="section">
 		<div class="container">
+			<a href="https://clarific.com.br/" target="_blank" class="logo"><img src="~/assets/img/lp2/logo.svg"></a>
 			<div class="columns">
 				<div class="column">
-					<a href="https://clarific.com.br/" target="_blank" class="logo"><img src="~/assets/img/lp2/logo.svg"></a>
 					<div class="content">
 						<h1>Websites que geram impacto</h1>
 						<a class="cta" v-scroll-to="{
@@ -16,7 +16,7 @@
 						</a>
 					</div>
 				</div>
-				<div class="column has-text-left">
+				<div class="column slideContainer">
 					<b-carousel
 						class="slide"
 						:arrow="false"
@@ -65,14 +65,28 @@
 </script>
 
 <style lang="scss" scoped>
-	.column.has-text-left {
-		display: flex;
-		align-items: flex-end;
+	.column.slideContainer {
+		@media(max-width: 769px) {
+			max-width: 100vw;
+			display: grid;
+			place-items: center;
+			place-content: center;
+		}
+	}
+	.logo {
+		z-index: 30;
+		position: relative;
 	}
 	.slide {
 		margin-left: 64px;
 		width: 260px;
 		height: 520px;
+		@media (max-width: 769px) {
+			margin-left: unset;
+			margin-top: 32px;
+			width: 160px;
+			height: 320px;
+		}
 		background: url('~assets/img/lp1/mockup.svg');
 		background-position: center;
 		background-size: cover;
@@ -84,6 +98,10 @@
 			img {
 				max-width: 225px;
 				border-radius: 30px;
+				@media (max-width: 769px) {
+					max-width: 138px;
+					border-radius: 20px;
+				}
 			}
 		}
 	}
@@ -97,6 +115,22 @@
 			right: 64px;
 			top: -100px;
 			z-index: 0;
+			@media (max-width: 769px) {
+				right: -500px;
+				top: -400px;
+			}
+			@media (max-width: 1600px) {
+				right: 0;
+			}
+			@media (max-width: 1500px) {
+				right: -100px;
+			}
+			@media (max-width: 1380px) {
+				right: -200px;
+			}
+			@media (max-width: 1000px) {
+				right: -300px;
+			}
 		}
 		.container {
 			min-height: 100%;
@@ -105,6 +139,13 @@
 			position: relative;
 			height: 100%;
 			z-index: 20;
+			@media (max-width: 769px) {
+				display: flex;
+				flex-direction: column;
+				.column:first-child {
+					order: 9;
+				}
+			}
 		}
 		.content {
 			width: 423px;
@@ -113,6 +154,9 @@
 			justify-content: flex-end;
 			min-height: 100%;
 			padding-bottom: 100px;
+			@media (max-width: 769px) {
+				width: auto;
+			}
 			h1 {
 				font-weight: 300;
 				font-size: 64px;
@@ -120,6 +164,10 @@
 				letter-spacing: -2px;
 				color: #141414;
 				margin-bottom: 42px;
+				@media (max-width: 769px) {
+					font-size: 42px;
+					line-height: 50px;
+				}
 			}
 			.cta {
 				display: inline-block;

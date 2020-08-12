@@ -73,6 +73,9 @@
 		margin-top: 52px;
 		padding: 64px;
 		background-color: #161719;
+		@media (max-width: 769px) {
+			padding: 20px;
+		}
 		.container {
 			z-index: 30;
 		}
@@ -86,6 +89,9 @@
 			display: flex;
 			align-items: center;
 			padding: 42px 0;
+			@media (max-width: 769px) {
+				flex-direction: column;
+			}
 			div:first-child {
 				min-height: 89px;
 				min-width: 100px;
@@ -93,6 +99,10 @@
 				display: grid;
 				place-items: center;
 				place-content: center;
+				@media (max-width: 769px) {
+					margin-right: unset;
+					margin-bottom: 24px;
+				}
 			}
 			img {
 				max-height: 89px;
@@ -103,6 +113,9 @@
 				font-size: 23px;
 				line-height: 23px;
 				color: #FAFAFA;
+				@media (max-width: 769px) {
+					text-align: center;
+				}
 			}
 			p {
 				font-weight: normal;

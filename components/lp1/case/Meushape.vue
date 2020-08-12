@@ -85,8 +85,12 @@
 </template>
 
 <style lang="scss" scoped>
+
 	.section {
 		background: transparent;
+		@media (max-width: 769px) {
+			padding-top: 48px;
+		}
 	}
 
 	.back {
@@ -95,6 +99,10 @@
 		font-size: 24px;
 		line-height: 24px;
 		color: #161719;
+		@media (max-width: 769px) {
+			margin-bottom: 42px;
+			display: inline-block;
+		}
 		> span {
 			position: relative;
 			&::after {
@@ -106,6 +114,9 @@
 				bottom: 0;
 				left: 0;
 				transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+				@media (max-width: 769px) {
+					width: 100%;
+				}
 			}
 		}
 		@media (min-width: 769px) {
@@ -128,9 +139,17 @@
 	> section { padding-top: 0; }
 	.subtitle:first-of-type {
 		margin-top: 70px;
+		@media (max-width: 769px) {
+			margin-top: unset;
+		}
 	}
 	.projectImg {
 		transform: translateY(0);
+	}
+	@media (max-width: 769px) {
+		padding: unset;
+		box-shadow: unset;
+		background: transparent;
 	}
 }
 .subtitle {
@@ -180,6 +199,7 @@ blockquote {
 		.projectImg {
 			transform: translateY(0);
 		}
+		> section.section { padding: unset; }
 	}
 	.container-fluid > section:first-of-type .columns {
 		display: flex;
@@ -187,6 +207,9 @@ blockquote {
 		> .column:first-of-type {
 			order: 1;
 			margin-top: -200px;
+			@media (max-width: 769px) {
+				margin-top: unset;
+			}
 		}
 		> .column:last-of-type {
 			order: 0;
@@ -196,6 +219,9 @@ blockquote {
 		margin-top: 30px;
 		> .column:last-of-type {
 			margin-top: -150px;
+			@media (max-width: 769px) {
+				margin-top: unset;
+			}
 		}
 	}
 	.container-fluid > section:nth-of-type(3n) .columns {
@@ -205,6 +231,9 @@ blockquote {
 		> .column:last-of-type {
 			order: -1;
 			margin-bottom: -60px;
+			@media (max-width: 769px) {
+				margin-bottom: unset;
+			}
 		}
 	}
 }

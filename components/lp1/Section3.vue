@@ -121,9 +121,27 @@
 <style lang="scss" scoped>
 	.columns + .columns {
 		margin-top: 200px;
+		@media (max-width: 769px) {
+			margin-top: 100px;
+		}
 	}
 
 	.column {
-		> img { max-width: 388px; }
+		> img {
+			max-width: 388px;
+			@media (max-width: 769px) {
+				max-width: 100%;
+			}
+		}
+	}
+
+	@media (max-width: 769px) {
+		.columns:nth-child(even) {
+			display: flex;
+			flex-direction: column;
+			.column:first-child {
+				order: 9;
+			}
+		}
 	}
 </style>
