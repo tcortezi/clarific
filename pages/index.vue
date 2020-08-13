@@ -38,7 +38,7 @@ export default {
 
 <style lang="scss" scoped>
 section {
-  padding-top: 124px;
+  padding-top: 200px;
   .column:first-of-type {
     p.lat { 
       margin-top: 40px;
@@ -160,7 +160,6 @@ section {
             height: 31px;
             background-image: url('../assets/home/highlight-mob-1.svg');
             background-size: 345px 31px;
-            z-index: -1;
             margin-left: -10px;
           }
           &::after {
